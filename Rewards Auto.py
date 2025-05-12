@@ -11,15 +11,15 @@ opcaoNavegador.add_argument("--start-maximized")
 
 driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()), options = opcaoNavegador)
 
-# url = "https://www.bing.com"
-# # for i in range(0, 30):
-# #     driver.get(url)
-# #     time.sleep(3)
-# #
-# #     caixaBusca = driver.find_element(By.XPATH, "//textarea[(@class='sb_form_q sb_form_ta')]")
-# #     caixaBusca.send_keys(str(i))
-# #     caixaBusca.send_keys(Keys.RETURN)
-# #     time.sleep(3)
+url = "https://www.bing.com"
+for i in range(0, 30):
+    driver.get(url)
+    time.sleep(3)
+
+    caixaBusca = driver.find_element(By.XPATH, "//textarea[(@class='sb_form_q sb_form_ta')]")
+    caixaBusca.send_keys(str(i))
+    caixaBusca.send_keys(Keys.RETURN)
+    time.sleep(3)
 
 url = "https://rewards.bing.com/"
 driver.get(url)
