@@ -22,12 +22,13 @@ driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()), 
 # #     time.sleep(3)
 
 url = "https://rewards.bing.com/"
+driver.get(url)
 time.sleep(3)
 
 missaoDiaria = driver.find_elements(By.XPATH, "//a[(@class='ds-card-sec ng-scope')]")[:3]
 
 for missoes in missaoDiaria:
-    missoes.send_keys(Keys.RETURN)
-
+    missoes.click()
+    time.sleep(2)
 
 driver.close()
